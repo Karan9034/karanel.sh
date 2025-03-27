@@ -8,7 +8,7 @@ const FunFacts = () => {
                     <div className="w-fit p-4 rounded-lg h-fit z-10">
                         <p className="w-fit card-header flex gap-2 items-center text-gray-600">
                             <svg
-                                enable-background="new 0 0 113.01 122.88"
+                                enableBackground="new 0 0 113.01 122.88"
                                 viewBox="0 0 113.01 122.88"
                                 className="w-4 h-4"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ const FunFacts = () => {
                         </p>
                         <ul className="list-disc  list-inside text-gray-600">
                             <li>Big time One Piece fan 🏴‍☠</li>
-                            <li>Manga/Manhwa reader</li>
+                            <li>Manga/Manhwa reader 📖</li>
                             <li>Lewis Hamilton fan 🏎️💨</li>
                             <li>Simp for Suki Waterhouse 🎶</li>
                         </ul>

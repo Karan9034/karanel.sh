@@ -2,4 +2,4 @@
 
 My portfolio website! 😴
 
-Inspired from [ana.sh](https://ana.sh) made by [@AnaArsonist](https://github.com/AnaArsonist).
+Desing inspiration from [ana.sh](https://ana.sh) made by [@AnaArsonist](https://github.com/AnaArsonist).

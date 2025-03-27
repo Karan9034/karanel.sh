@@ -15,7 +15,7 @@ const ReachOut = () => {
                                     <svg
                                         stroke="currentColor"
                                         fill="currentColor"
-                                        stroke-width="0"
+                                        strokeWidth="0"
                                         role="img"
                                         viewBox="0 0 24 24"
                                         className="w-5 h-5 text-white drop-shadow-md"
@@ -53,7 +53,7 @@ const ReachOut = () => {
                                     <svg
                                         stroke="currentColor"
                                         fill="currentColor"
-                                        stroke-width="0"
+                                        strokeWidth="0"
                                         role="img"
                                         viewBox="0 0 24 24"
                                         className="w-5 h-5 text-white drop-shadow-md"
@@ -91,7 +91,7 @@ const ReachOut = () => {
                                     <svg
                                         stroke="currentColor"
                                         fill="currentColor"
-                                        stroke-width="0"
+                                        strokeWidth="0"
                                         role="img"
                                         viewBox="0 0 24 24"
                                         className="w-5 h-5 text-gray-800 drop-shadow-md"

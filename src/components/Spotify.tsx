@@ -1,12 +1,60 @@
-const Spotify = () => {
+import { RefObject, useRef, useState } from "react";
+import {
+    MotionValue,
+    useMotionTemplate,
+    useMotionValue,
+    useSpring,
+    motion,
+} from "framer-motion";
+
+interface SpotifyProps {
+    spotifyData: any;
+    handleMouseMove: (
+        e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+        ref: DOMRect|null,
+        x: MotionValue<number>,
+        y: MotionValue<number>
+    ) => void;
+    handleMouseLeave: (x: MotionValue<number>, y: MotionValue<number>) => void;
+}
+
+const Spotify = ({
+    spotifyData,
+    handleMouseLeave,
+    handleMouseMove,
+}: SpotifyProps) => {
+    const [rect, setRect] = useState<DOMRect|null>(null);
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+    const xSpring = useSpring(x);
+    const ySpring = useSpring(y);
+    const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
+
     return (
-        <div className="h-full w-full [perspective:800px] sm:col-span-1 col-span-2">
-            <div className="card-hover h-full w-full rounded-xl shadow-inner shadow-indigo-700/5 map-border">
+        <motion.div
+            onMouseMove={(e) => handleMouseMove(e, rect, x, y)}
+            onMouseLeave={() => handleMouseLeave(x, y)}
+            onMouseEnter={(e) => {
+                setRect(e.currentTarget.getBoundingClientRect())
+            }}
+            style={{
+                transformStyle: "preserve-3d",
+                transform,
+            }}
+            className="h-full w-full [perspective:800px] sm:col-span-1 col-span-2"
+        >
+            <div
+                style={{
+                    transformStyle: "preserve-3d",
+                    transform: `translateZ(10px)`,
+                }}
+                className="card-hover h-full w-full rounded-xl shadow-inner shadow-indigo-700/5 map-border"
+            >
                 <a
                     target="_blank"
                     rel="noreferrer"
                     className="h-full flex flex-col justify-between w-full bg-gray-50 border-[1px] border-gray-100 p-[18px] rounded-md"
-                    href="https://open.spotify.com/track/2LHrjE4VT99HBa9LdkSBT3"
+                    href={`https://open.spotify.com/track/${spotifyData?.track_id}`}
                 >
                     <div className="h-full w-full">
                         <h1 className="card-header flex gap-2 items-center">
@@ -71,8 +119,8 @@ const Spotify = () => {
                                 data-nimg="1"
                                 className="z-20 rounded-lg h-full w-full border-[1px] border-white"
                                 style={{ color: "transparent" }}
-                                srcSet=""
-                                src=""
+                                srcSet={spotifyData?.album_art_url}
+                                src={spotifyData?.album_art_url}
                             />
                             <img
                                 aria-placeholder="empty"
@@ -84,25 +132,32 @@ const Spotify = () => {
                                 data-nimg="1"
                                 className="-z-10 h-full w-full rounded-lg absolute blur-xl saturate-[10] translate-y-2 opacity-75 sm:opacity-50 overflow-visible"
                                 style={{ color: "transparent" }}
-                                srcSet=""
-                                src=""
+                                srcSet={spotifyData?.album_art_url}
+                                src={spotifyData?.album_art_url}
                             />
                             <div className="absolute z-10 h-full w-full rounded-lg skeleton top-0 right-0"></div>
                         </div>
                         <div className="w-full flex items-end justify-end text-end">
                             <div className="flex flex-col h-full items-end justify-end">
                                 <h1 className="text-lg font-medium text-gray-700 z-20">
-                                    as long as i'm by your side
+                                    {spotifyData?.song?.length > 35
+                                        ? `${spotifyData?.song.slice(0, 35)}...`
+                                        : spotifyData?.song}
                                 </h1>
                                 <p className="text-sm font-normal text-gray-500">
-                                    Endie
+                                    {spotifyData?.artist?.length > 25
+                                        ? `${spotifyData?.artist.slice(
+                                              0,
+                                              25
+                                          )}...`
+                                        : spotifyData?.artist}
                                 </p>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

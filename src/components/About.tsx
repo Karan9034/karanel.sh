@@ -1,3 +1,6 @@
+import FingerprintIcon from "@mui/icons-material/Fingerprint";
+import TwitterIcon from "@mui/icons-material/Twitter";
+
 const About = () => {
     return (
         <div className="flex flex-col gap-6">
@@ -5,22 +8,7 @@ const About = () => {
                 <div className="w-full justify-between flex">
                     <h1 className="card-header flex gap-2 items-center text-gray-600">
                         <div>
-                            <svg
-                                className="w-5"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                            >
-                                <path
-                                    d="M7.60432 8.13491L6.86929 4.13131L7.51863 3.59433C8.93283 2.42484 11.0996 3.0614 11.6333 4.80313M15.141 14.4185C16.1348 13.6216 17.5974 13.7463 18.4312 14.7051C19.2943 15.6975 19.1596 17.1954 18.1329 18.0228L16.3602 19.4514C13.4126 21.8267 9.07509 21.4254 6.62767 18.5508C4.15811 15.6503 4.54199 11.3259 7.4851 8.89209L13.7274 3.72992C14.7023 2.92376 16.1557 3.04908 16.9737 4.00982C17.7917 4.97057 17.6645 6.40293 16.6897 7.20909L12.9633 10.2906L13.5517 9.80407C14.5265 8.99791 15.9799 9.12323 16.7979 10.084C17.6159 11.0447 17.4887 12.4771 16.5139 13.2832L15.9255 13.7698"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                ></path>
-                            </svg>
+                            <FingerprintIcon className="w-5" />
                         </div>
                         ABOUT ME
                     </h1>
@@ -32,19 +20,7 @@ const About = () => {
                             rel="noreferrer"
                             href="https://twitter.com/_karanel"
                         >
-                            <svg
-                                stroke="currentColor"
-                                fill="currentColor"
-                                strokeWidth="0"
-                                role="img"
-                                viewBox="0 0 24 24"
-                                className="text-gray-400 hover:text-gray-600 transition-all fill-current w-4 h-4"
-                                height="1em"
-                                width="1em"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M21.543 7.104c.015.211.015.423.015.636 0 6.507-4.954 14.01-14.01 14.01v-.003A13.94 13.94 0 0 1 0 19.539a9.88 9.88 0 0 0 7.287-2.041 4.93 4.93 0 0 1-4.6-3.42 4.916 4.916 0 0 0 2.223-.084A4.926 4.926 0 0 1 .96 9.167v-.062a4.887 4.887 0 0 0 2.235.616A4.928 4.928 0 0 1 1.67 3.148 13.98 13.98 0 0 0 11.82 8.292a4.929 4.929 0 0 1 8.39-4.49 9.868 9.868 0 0 0 3.128-1.196 4.941 4.941 0 0 1-2.165 2.724A9.828 9.828 0 0 0 24 4.555a10.019 10.019 0 0 1-2.457 2.549z"></path>
-                            </svg>
+                            <TwitterIcon className="w-4 h-4 text-gray-400 hover:text-gray-600 transition-all fill-current" />
                         </a>
                         <a
                             target="_blank"
@@ -52,7 +28,7 @@ const About = () => {
                             href="https://discordapp.com/users/716322492586655795"
                         >
                             <svg
-                                className="text-gray-400 hover:text-gray-600 transition-all w-5"
+                                className="text-gray-400 hover:text-gray-600 transition-all w-6"
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
                                 height="24"

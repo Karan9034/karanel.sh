@@ -1,7 +1,55 @@
-const Weather = () => {
+import { RefObject, useRef, useState } from "react";
+import useSWR from "swr";
+import {
+    MotionValue,
+    useMotionTemplate,
+    useMotionValue,
+    useSpring,
+    motion,
+} from "framer-motion";
+
+interface WeatherProps {
+    handleMouseMove: (
+        e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+        ref: DOMRect|null,
+        x: MotionValue<number>,
+        y: MotionValue<number>
+    ) => void;
+    handleMouseLeave: (x: MotionValue<number>, y: MotionValue<number>) => void;
+}
+
+const Weather = ({ handleMouseMove, handleMouseLeave }: WeatherProps) => {
+    const { data, isLoading } = useSWR("/api/weather", (url) =>
+        fetch(url).then((res) => res.json())
+    );
+
+    const [rect, setRect] = useState<DOMRect|null>(null);
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+    const xSpring = useSpring(x);
+    const ySpring = useSpring(y);
+    const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
+
     return (
-        <div className="h-full w-full [perspective:800px] col-span-1 row-span-1">
-            <div className="card-hover w-full h-full rounded-md bg-gray-50 map-border shadow-md shadow-brand-900/5">
+        <motion.div
+            onMouseMove={(e) => handleMouseMove(e, rect, x, y)}
+            onMouseLeave={() => handleMouseLeave(x, y)}
+            onMouseEnter={(e) => {
+                setRect(e.currentTarget.getBoundingClientRect())
+            }}
+            style={{
+                transformStyle: "preserve-3d",
+                transform,
+            }}
+            className="h-full w-full [perspective:800px] col-span-1 row-span-1"
+        >
+            <div
+                style={{
+                    transformStyle: "preserve-3d",
+                    transform: `translateZ(10px)`,
+                }}
+                className="card-hover w-full h-full rounded-md bg-gray-50 map-border shadow-md shadow-brand-900/5"
+            >
                 <div className="w-full h-full p-6 border-[1px] border-gray-100 rounded-md">
                     <p className="card-header flex items-center gap-2">
                         <svg
@@ -23,14 +71,14 @@ const Weather = () => {
                         WEATHER
                     </p>
                     <p className="text-3xl 3xl:text-4xl font-medium text-gray-600">
-                        15.2°C
+                        {data?.current?.temp_c}°
                     </p>
                     <p className="text-sm 3xl:text-base  text-gray-500">
-                        Sunny
+                        {data?.current?.condition?.text}
                     </p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

@@ -1,7 +1,57 @@
-const Online = () => {
+import {
+    motion,
+    MotionValue,
+    useMotionValue,
+    useSpring,
+    useMotionTemplate,
+} from "framer-motion";
+import { RefObject, useRef, useState } from "react";
+
+interface DiscordProps {
+    status: string;
+    bgClass: string;
+    handleMouseMove: (
+        e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+        ref: DOMRect|null,
+        x: MotionValue<number>,
+        y: MotionValue<number>
+    ) => void;
+    handleMouseLeave: (x: MotionValue<number>, y: MotionValue<number>) => void;
+}
+
+const Discord = ({
+    status,
+    bgClass,
+    handleMouseLeave,
+    handleMouseMove,
+}: DiscordProps) => {
+    const [rect, setRect] = useState<DOMRect|null>(null);
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+    const xSpring = useSpring(x);
+    const ySpring = useSpring(y);
+    const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
+
     return (
-        <div className="h-full w-full [perspective:800px] flex h-full">
-            <div className="card-hover w-full h-full bg-gray-50 map-border shadow-md shadow-indigo-900/5">
+        <motion.div
+            onMouseMove={(e) => handleMouseMove(e, rect, x, y)}
+            onMouseLeave={() => handleMouseLeave(x, y)}
+            onMouseEnter={(e) => {
+                setRect(e.currentTarget.getBoundingClientRect())
+            }}
+            style={{
+                transformStyle: "preserve-3d",
+                transform,
+            }}
+            className="h-full w-full [perspective:800px] flex h-full"
+        >
+            <div
+                style={{
+                    transformStyle: "preserve-3d",
+                    transform: `translateZ(10px)`,
+                }}
+                className="card-hover w-full h-full bg-gray-50 map-border shadow-md shadow-indigo-900/5"
+            >
                 <div className="w-full h-full flex p-6 border-[1px] border-gray-100 rounded-md flex-col">
                     <h2 className="card-header flex items-center gap-2">
                         <svg
@@ -22,11 +72,15 @@ const Online = () => {
                     <div className="h-full flex flex-col pt-2 justify-center gap-2">
                         <div className="flex gap-1 w-fit h-full items-center justify-center px-1">
                             <div className="relative h-fill w-4">
-                                <div className="w-2 h-2 rounded-full bg-gray-300 dark:bg-[#FF477E]"></div>
-                                <div className="w-2 h-2 rounded-full inset-0 bg-gray-300 dark:bg-[#FF477E] absolute animate-ping"></div>
+                                <div
+                                    className={`w-2 h-2 rounded-full ${bgClass}`}
+                                ></div>
+                                <div
+                                    className={`w-2 h-2 rounded-full inset-0 ${bgClass} absolute animate-ping`}
+                                ></div>
                             </div>
                             <p className="text-gray-500 font-medium text-3xl">
-                                OFFLINE
+                                {status}
                             </p>
                         </div>
                         <div className="flex gap-2 items-center">
@@ -35,8 +89,8 @@ const Online = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
-export default Online;
+export default Discord;

@@ -1,7 +1,54 @@
-const WhatIUse = () => {
+import LaptopRoundedIcon from "@mui/icons-material/LaptopRounded";
+import PhoneAndroidRoundedIcon from "@mui/icons-material/PhoneAndroidRounded";
+import MicRoundedIcon from "@mui/icons-material/MicRounded";
+import { RefObject, useRef, useState } from "react";
+import useSWR from "swr";
+import {
+    MotionValue,
+    useMotionTemplate,
+    useMotionValue,
+    useSpring,
+    motion,
+} from "framer-motion";
+
+interface WhatIUseProps {
+    handleMouseMove: (
+        e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+        ref: DOMRect|null,
+        x: MotionValue<number>,
+        y: MotionValue<number>
+    ) => void;
+    handleMouseLeave: (x: MotionValue<number>, y: MotionValue<number>) => void;
+}
+
+const WhatIUse = ({ handleMouseMove, handleMouseLeave }: WhatIUseProps) => {
+    const [rect, setRect] = useState<DOMRect|null>(null);
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+    const xSpring = useSpring(x);
+    const ySpring = useSpring(y);
+    const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
+
     return (
-        <div className="h-full w-full [perspective:800px] col-span-2 w-full h-full ">
-            <div className="card-hover w-full h-full map-border rounded-md bg-gray-50 shadow-md shadow-indigo-900/5">
+        <motion.div
+            onMouseMove={(e) => handleMouseMove(e, rect, x, y)}
+            onMouseLeave={() => handleMouseLeave(x, y)}
+            onMouseEnter={(e) => {
+                setRect(e.currentTarget.getBoundingClientRect())
+            }}
+            style={{
+                transformStyle: "preserve-3d",
+                transform,
+            }}
+            className="h-full w-full [perspective:800px] col-span-2 w-full h-full "
+        >
+            <div
+                style={{
+                    transformStyle: "preserve-3d",
+                    transform: `translateZ(10px)`,
+                }}
+                className="card-hover w-full h-full map-border rounded-md bg-gray-50 shadow-md shadow-indigo-900/5"
+            >
                 <div className="w-full h-full p-6 border-[1px] border-gray-100 rounded-md">
                     <div className="flex gap-2 items-center card-header leading-tight">
                         <svg
@@ -27,7 +74,7 @@ const WhatIUse = () => {
                             Hardware
                             <div className="flex flex-col gap-2 px-1 text-xs font-normal text-gray-500">
                                 <p className="flex gap-2 items-center leading-tight">
-                                    <svg
+                                    {/* <svg
                                         className="w-4 text-gray-600"
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -49,11 +96,12 @@ const WhatIUse = () => {
                                             strokeLinecap="square"
                                             strokeLinejoin="round"
                                         ></path>
-                                    </svg>
-                                    MacBook Pro M3 Max
+                                    </svg> */}
+                                    <LaptopRoundedIcon className="text-gray-600" />
+                                    Asus Vivobook 15
                                 </p>
                                 <p className="flex gap-2 items-center leading-tight">
-                                    <svg
+                                    {/* <svg
                                         className="w-4 text-gray-600"
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -68,11 +116,12 @@ const WhatIUse = () => {
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
                                         ></path>
-                                    </svg>
-                                    iPhone 15 Pro Max
+                                    </svg> */}
+                                    <PhoneAndroidRoundedIcon className="text-gray-600" />
+                                    realme 8s 5G
                                 </p>
                                 <p className="flex gap-2 items-center leading-tight">
-                                    <svg
+                                    {/* <svg
                                         className="w-4 text-gray-600"
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -94,8 +143,9 @@ const WhatIUse = () => {
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
                                         ></path>
-                                    </svg>
-                                    Zoom65 V2
+                                    </svg> */}
+                                    <MicRoundedIcon className="text-gray-600" />
+                                    Blue Snowball Mic
                                 </p>
                             </div>
                         </div>
@@ -131,7 +181,7 @@ const WhatIUse = () => {
                                             fill="currentColor"
                                             strokeWidth="0"
                                             viewBox="0 0 16 16"
-                                            className="w-4 h-4    text-gray-600"
+                                            className="w-5 h-5 text-gray-600"
                                             height="1em"
                                             width="1em"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -198,7 +248,7 @@ const WhatIUse = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
