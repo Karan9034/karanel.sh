@@ -67,7 +67,7 @@ const FunFacts = () => {
                                                                 color: "transparent",
                                                             }}
                                                             srcSet="pfp.jpeg"
-                                                            src="pfp.jpeg"
+                                                            src="/pfp.jpeg"
                                                         />
                                                     </div>
                                                 </div>
@@ -93,7 +93,7 @@ const FunFacts = () => {
                                                                 color: "transparent",
                                                             }}
                                                             srcSet="pfp-round.jpeg"
-                                                            src="pfp-round.jpeg"
+                                                            src="/pfp-round.jpeg"
                                                         />
                                                     </div>
                                                 </div>
@@ -119,7 +119,7 @@ const FunFacts = () => {
                                                                 color: "transparent",
                                                             }}
                                                             srcSet="pfp.jpeg"
-                                                            src="pfp.jpeg"
+                                                            src="/pfp.jpeg"
                                                         />
                                                     </div>
                                                 </div>
@@ -145,7 +145,7 @@ const FunFacts = () => {
                                                                 color: "transparent",
                                                             }}
                                                             srcSet="pfp-round.jpeg"
-                                                            src="pfp-round.jpeg"
+                                                            src="/pfp-round.jpeg"
                                                         />
                                                     </div>
                                                 </div>
@@ -171,7 +171,7 @@ const FunFacts = () => {
                                                                 color: "transparent",
                                                             }}
                                                             srcSet="pfp.jpeg"
-                                                            src="pfp.jpeg"
+                                                            src="/pfp.jpeg"
                                                         />
                                                     </div>
                                                 </div>

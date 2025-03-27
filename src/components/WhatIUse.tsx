@@ -1,8 +1,5 @@
-import LaptopRoundedIcon from "@mui/icons-material/LaptopRounded";
-import PhoneAndroidRoundedIcon from "@mui/icons-material/PhoneAndroidRounded";
 import MicRoundedIcon from "@mui/icons-material/MicRounded";
-import { RefObject, useRef, useState } from "react";
-import useSWR from "swr";
+import { useState } from "react";
 import {
     MotionValue,
     useMotionTemplate,
@@ -10,19 +7,22 @@ import {
     useSpring,
     motion,
 } from "framer-motion";
+import { LuLaptop } from "react-icons/lu";
+import { IoPhonePortraitOutline } from "react-icons/io5";
+import { FiCpu } from "react-icons/fi";
 
 interface WhatIUseProps {
     handleMouseMove: (
         e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-        ref: DOMRect|null,
+        ref: DOMRect | null,
         x: MotionValue<number>,
-        y: MotionValue<number>
+        y: MotionValue<number>,
     ) => void;
     handleMouseLeave: (x: MotionValue<number>, y: MotionValue<number>) => void;
 }
 
 const WhatIUse = ({ handleMouseMove, handleMouseLeave }: WhatIUseProps) => {
-    const [rect, setRect] = useState<DOMRect|null>(null);
+    const [rect, setRect] = useState<DOMRect | null>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const xSpring = useSpring(x);
@@ -34,7 +34,7 @@ const WhatIUse = ({ handleMouseMove, handleMouseLeave }: WhatIUseProps) => {
             onMouseMove={(e) => handleMouseMove(e, rect, x, y)}
             onMouseLeave={() => handleMouseLeave(x, y)}
             onMouseEnter={(e) => {
-                setRect(e.currentTarget.getBoundingClientRect())
+                setRect(e.currentTarget.getBoundingClientRect());
             }}
             style={{
                 transformStyle: "preserve-3d",
@@ -74,51 +74,25 @@ const WhatIUse = ({ handleMouseMove, handleMouseLeave }: WhatIUseProps) => {
                             Hardware
                             <div className="flex flex-col gap-2 px-1 text-xs font-normal text-gray-500">
                                 <p className="flex gap-2 items-center leading-tight">
-                                    {/* <svg
-                                        className="w-4 text-gray-600"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                    >
-                                        <path
-                                            d="M4 5C4 4.44772 4.44772 4 5 4H19C19.5523 4 20 4.44772 20 5V15C20 15.5523 19.5523 16 19 16H5C4.44772 16 4 15.5523 4 15V5Z"
-                                            stroke="currentColor"
-                                            strokeWidth="2"
-                                            strokeLinecap="square"
-                                            strokeLinejoin="round"
-                                        ></path>
-                                        <path
-                                            d="M2 16H22V19C22 19.5523 21.5523 20 21 20H3C2.44772 20 2 19.5523 2 19V16Z"
-                                            stroke="currentColor"
-                                            strokeWidth="2"
-                                            strokeLinecap="square"
-                                            strokeLinejoin="round"
-                                        ></path>
-                                    </svg> */}
-                                    <LaptopRoundedIcon className="text-gray-600" />
+                                    <LuLaptop
+                                        className="text-gray-600"
+                                        size={20}
+                                    />
                                     Asus Vivobook 15
                                 </p>
                                 <p className="flex gap-2 items-center leading-tight">
-                                    {/* <svg
-                                        className="w-4 text-gray-600"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                    >
-                                        <path
-                                            d="M11 5H13M7 22H17C17.5523 22 18 21.5523 18 21V3C18 2.44772 17.5523 2 17 2H7C6.44772 2 6 2.44772 6 3V21C6 21.5523 6.44772 22 7 22Z"
-                                            stroke="currentColor"
-                                            strokeWidth="2"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        ></path>
-                                    </svg> */}
-                                    <PhoneAndroidRoundedIcon className="text-gray-600" />
+                                    <IoPhonePortraitOutline
+                                        className="text-gray-600"
+                                        size={20}
+                                    />
                                     realme 8s 5G
+                                </p>
+                                <p className="flex gap-2 items-center leading-tight">
+                                    <FiCpu
+                                        className="text-gray-600"
+                                        size={20}
+                                    />
+                                    AMD Ryzen 5
                                 </p>
                                 <p className="flex gap-2 items-center leading-tight">
                                     {/* <svg

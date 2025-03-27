@@ -1,5 +1,5 @@
 import GitHubCalendar from "react-github-calendar";
-import { RefObject, useRef, useState } from "react";
+import { useState } from "react";
 import {
     MotionValue,
     useMotionTemplate,
@@ -11,15 +11,15 @@ import {
 interface GitHubProps {
     handleMouseMove: (
         e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-        ref: DOMRect|null,
+        ref: DOMRect | null,
         x: MotionValue<number>,
-        y: MotionValue<number>
+        y: MotionValue<number>,
     ) => void;
     handleMouseLeave: (x: MotionValue<number>, y: MotionValue<number>) => void;
 }
 
 const GitHub = ({ handleMouseLeave, handleMouseMove }: GitHubProps) => {
-    const [rect, setRect] = useState<DOMRect|null>(null);
+    const [rect, setRect] = useState<DOMRect | null>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const xSpring = useSpring(x);
@@ -31,7 +31,7 @@ const GitHub = ({ handleMouseLeave, handleMouseMove }: GitHubProps) => {
             onMouseMove={(e) => handleMouseMove(e, rect, x, y)}
             onMouseLeave={() => handleMouseLeave(x, y)}
             onMouseEnter={(e) => {
-                setRect(e.currentTarget.getBoundingClientRect())
+                setRect(e.currentTarget.getBoundingClientRect());
             }}
             style={{
                 transformStyle: "preserve-3d",

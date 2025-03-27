@@ -7,11 +7,12 @@ import Spotify from "./Spotify";
 import Weather from "./Weather";
 import WhatIUse from "./WhatIUse";
 import useSWR from "swr";
-import { RefObject, useMemo } from "react";
+import { useMemo } from "react";
 import { MotionValue } from "framer-motion";
-import { HALF_ROTATION_RANGE, ROTATION_RANGE } from "@/data/const";
+import { ROTATION_RANGE } from "@/data/const";
 
 const Main = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const storeSpotifyData = (data: any) => {
         fetch("/api/spotify", {
             method: "POST",
@@ -22,7 +23,7 @@ const Main = () => {
     const { data, isLoading } = useSWR(
         `/api/discord`,
         (url) => fetch(url).then((res) => res.json()),
-        { refreshInterval: 10000 }
+        { refreshInterval: 10000 },
     );
 
     const [status, bgClass] = useMemo(() => {
@@ -57,11 +58,11 @@ const Main = () => {
             default:
                 return [null];
         }
-    }, [data]);
+    }, [data, isLoading]);
 
     const handleMouseMove = (
         e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-        rect: DOMRect|null,
+        rect: DOMRect | null,
         x: MotionValue<number>,
         y: MotionValue<number>,
     ) => {
@@ -70,19 +71,19 @@ const Main = () => {
         const width = rect.width;
         const height = rect.height;
 
-        const mouseX = (e.clientX - rect.left);
-        const mouseY = (e.clientY - rect.top);
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
 
         const rX = mouseY / height;
         const rY = mouseX / width;
 
-        x.set((0.5-rX)*ROTATION_RANGE);
-        y.set((rY-0.5)*ROTATION_RANGE);
+        x.set((0.5 - rX) * ROTATION_RANGE);
+        y.set((rY - 0.5) * ROTATION_RANGE);
     };
 
     const handleMouseLeave = (
         x: MotionValue<number>,
-        y: MotionValue<number>
+        y: MotionValue<number>,
     ) => {
         x.set(0);
         y.set(0);
@@ -106,10 +107,23 @@ const Main = () => {
                 handleMouseMove={handleMouseMove}
                 handleMouseLeave={handleMouseLeave}
             />
-            <Instagram handleMouseMove={handleMouseMove} handleMouseLeave={handleMouseLeave} />
-            <Spotify spotifyData={spotifyData} handleMouseMove={handleMouseMove} handleMouseLeave={handleMouseLeave}/>
-            <WhatIUse handleMouseMove={handleMouseMove} handleMouseLeave={handleMouseLeave} />
-            <GitHub handleMouseMove={handleMouseMove} handleMouseLeave={handleMouseLeave} />
+            <Instagram
+                handleMouseMove={handleMouseMove}
+                handleMouseLeave={handleMouseLeave}
+            />
+            <Spotify
+                spotifyData={spotifyData}
+                handleMouseMove={handleMouseMove}
+                handleMouseLeave={handleMouseLeave}
+            />
+            <WhatIUse
+                handleMouseMove={handleMouseMove}
+                handleMouseLeave={handleMouseLeave}
+            />
+            <GitHub
+                handleMouseMove={handleMouseMove}
+                handleMouseLeave={handleMouseLeave}
+            />
             <ReachOut />
         </div>
     );

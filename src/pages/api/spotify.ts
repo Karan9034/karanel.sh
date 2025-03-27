@@ -7,10 +7,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": process.env.LANYARD_API_KEY as string,
+                Authorization: process.env.LANYARD_API_KEY as string,
             },
-            body: req.body
-        }
+            body: req.body,
+        },
     ).then((res) => res.body);
 
     return res.status(200).json(response);

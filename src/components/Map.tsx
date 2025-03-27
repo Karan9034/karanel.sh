@@ -5,34 +5,33 @@ import {
     useSpring,
     useMotionTemplate,
 } from "framer-motion";
-import { RefObject, useRef, useState } from "react";
+import Image from "next/image";
+import { useState } from "react";
 
 interface MapProps {
     handleMouseMove: (
         e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-        ref: DOMRect|null,
+        ref: DOMRect | null,
         x: MotionValue<number>,
-        y: MotionValue<number>
+        y: MotionValue<number>,
     ) => void;
     handleMouseLeave: (x: MotionValue<number>, y: MotionValue<number>) => void;
 }
 
 const Map = ({ handleMouseMove, handleMouseLeave }: MapProps) => {
-    const [rect, setRect] = useState<DOMRect|null>(null);
+    const [rect, setRect] = useState<DOMRect | null>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const xSpring = useSpring(x);
     const ySpring = useSpring(y);
     const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
 
-    console.log(transform);
-
     return (
         <motion.div
             onMouseMove={(e) => handleMouseMove(e, rect, x, y)}
             onMouseLeave={() => handleMouseLeave(x, y)}
             onMouseEnter={(e) => {
-                setRect(e.currentTarget.getBoundingClientRect())
+                setRect(e.currentTarget.getBoundingClientRect());
             }}
             style={{
                 transformStyle: "preserve-3d",
@@ -69,7 +68,7 @@ const Map = ({ handleMouseMove, handleMouseLeave }: MapProps) => {
                     </div>
                     <div className="absolute inset-0 w-full h-full">
                         <div className="relative w-full h-full overflow-hidden">
-                            <img
+                            <Image
                                 alt=""
                                 loading="lazy"
                                 width="1479"
@@ -78,10 +77,9 @@ const Map = ({ handleMouseMove, handleMouseLeave }: MapProps) => {
                                 data-nimg="1"
                                 className="w-full h-full absolute object-cover z-10 bg-blend-overlay mix-blend-overlay opacity-10 sm:opacity-40"
                                 style={{ color: "transparent" }}
-                                srcSet="null"
-                                src="null"
+                                src="/#"
                             />
-                            <img
+                            <Image
                                 alt=""
                                 fetchPriority="high"
                                 width="680"
@@ -90,8 +88,7 @@ const Map = ({ handleMouseMove, handleMouseLeave }: MapProps) => {
                                 data-nimg="1"
                                 className="w-full h-full absolute saturate-[150%] border-[1px] border-gray-200 object-cover scale-[120%]"
                                 style={{ color: "transparent" }}
-                                srcSet="null"
-                                src="null"
+                                src="/#"
                             />
                             {/* <iframe
                                 width="640"
@@ -99,7 +96,7 @@ const Map = ({ handleMouseMove, handleMouseLeave }: MapProps) => {
                                 src="https://www.openstreetmap.org/export/embed.html?bbox=77.66312599182129%2C12.911885049973801%2C77.74346351623537%2C12.965421993914006&amp;layer=P"
                             ></iframe> */}
                             <br />
-                            <img
+                            <Image
                                 alt=""
                                 loading="lazy"
                                 width="1116"
@@ -108,8 +105,7 @@ const Map = ({ handleMouseMove, handleMouseLeave }: MapProps) => {
                                 data-nimg="1"
                                 className="w-full h-full absolute inset-0 saturate-200 -z-5 object-fill"
                                 style={{ color: "transparent" }}
-                                srcSet="null"
-                                src="null"
+                                src="/#"
                             />
                         </div>
                     </div>

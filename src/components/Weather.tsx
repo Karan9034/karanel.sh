@@ -1,4 +1,4 @@
-import { RefObject, useRef, useState } from "react";
+import { useState } from "react";
 import useSWR from "swr";
 import {
     MotionValue,
@@ -11,19 +11,19 @@ import {
 interface WeatherProps {
     handleMouseMove: (
         e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-        ref: DOMRect|null,
+        ref: DOMRect | null,
         x: MotionValue<number>,
-        y: MotionValue<number>
+        y: MotionValue<number>,
     ) => void;
     handleMouseLeave: (x: MotionValue<number>, y: MotionValue<number>) => void;
 }
 
 const Weather = ({ handleMouseMove, handleMouseLeave }: WeatherProps) => {
     const { data, isLoading } = useSWR("/api/weather", (url) =>
-        fetch(url).then((res) => res.json())
+        fetch(url).then((res) => res.json()),
     );
 
-    const [rect, setRect] = useState<DOMRect|null>(null);
+    const [rect, setRect] = useState<DOMRect | null>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const xSpring = useSpring(x);
@@ -35,7 +35,7 @@ const Weather = ({ handleMouseMove, handleMouseLeave }: WeatherProps) => {
             onMouseMove={(e) => handleMouseMove(e, rect, x, y)}
             onMouseLeave={() => handleMouseLeave(x, y)}
             onMouseEnter={(e) => {
-                setRect(e.currentTarget.getBoundingClientRect())
+                setRect(e.currentTarget.getBoundingClientRect());
             }}
             style={{
                 transformStyle: "preserve-3d",
@@ -71,7 +71,7 @@ const Weather = ({ handleMouseMove, handleMouseLeave }: WeatherProps) => {
                         WEATHER
                     </p>
                     <p className="text-3xl 3xl:text-4xl font-medium text-gray-600">
-                        {data?.current?.temp_c}°
+                        {isLoading ? "Loading..." : data?.current?.temp_c + "°"}
                     </p>
                     <p className="text-sm 3xl:text-base  text-gray-500">
                         {data?.current?.condition?.text}

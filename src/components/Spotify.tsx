@@ -1,4 +1,4 @@
-import { RefObject, useRef, useState } from "react";
+import { useState } from "react";
 import {
     MotionValue,
     useMotionTemplate,
@@ -6,14 +6,16 @@ import {
     useSpring,
     motion,
 } from "framer-motion";
+import Image from "next/image";
 
 interface SpotifyProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     spotifyData: any;
     handleMouseMove: (
         e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-        ref: DOMRect|null,
+        ref: DOMRect | null,
         x: MotionValue<number>,
-        y: MotionValue<number>
+        y: MotionValue<number>,
     ) => void;
     handleMouseLeave: (x: MotionValue<number>, y: MotionValue<number>) => void;
 }
@@ -23,7 +25,7 @@ const Spotify = ({
     handleMouseLeave,
     handleMouseMove,
 }: SpotifyProps) => {
-    const [rect, setRect] = useState<DOMRect|null>(null);
+    const [rect, setRect] = useState<DOMRect | null>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const xSpring = useSpring(x);
@@ -35,7 +37,7 @@ const Spotify = ({
             onMouseMove={(e) => handleMouseMove(e, rect, x, y)}
             onMouseLeave={() => handleMouseLeave(x, y)}
             onMouseEnter={(e) => {
-                setRect(e.currentTarget.getBoundingClientRect())
+                setRect(e.currentTarget.getBoundingClientRect());
             }}
             style={{
                 transformStyle: "preserve-3d",
@@ -109,7 +111,7 @@ const Spotify = ({
                     </div>
                     <div className="flex flex-col gap-6 2xl:gap-2 h-full w-full items-end">
                         <div className="relative z-10 flex items-center justify-end xl:h-32 xl:w-32 2xl:h-36 2xl:w-36 3xl:w-56 3xl:h-56 aspect-square">
-                            <img
+                            <Image
                                 aria-placeholder="empty"
                                 alt=""
                                 fetchPriority="high"
@@ -119,10 +121,13 @@ const Spotify = ({
                                 data-nimg="1"
                                 className="z-20 rounded-lg h-full w-full border-[1px] border-white"
                                 style={{ color: "transparent" }}
-                                srcSet={spotifyData?.album_art_url}
-                                src={spotifyData?.album_art_url}
+                                src={
+                                    spotifyData
+                                        ? spotifyData.album_art_url
+                                        : "/#"
+                                }
                             />
-                            <img
+                            <Image
                                 aria-placeholder="empty"
                                 alt=""
                                 loading="lazy"
@@ -132,7 +137,6 @@ const Spotify = ({
                                 data-nimg="1"
                                 className="-z-10 h-full w-full rounded-lg absolute blur-xl saturate-[10] translate-y-2 opacity-75 sm:opacity-50 overflow-visible"
                                 style={{ color: "transparent" }}
-                                srcSet={spotifyData?.album_art_url}
                                 src={spotifyData?.album_art_url}
                             />
                             <div className="absolute z-10 h-full w-full rounded-lg skeleton top-0 right-0"></div>
@@ -146,10 +150,7 @@ const Spotify = ({
                                 </h1>
                                 <p className="text-sm font-normal text-gray-500">
                                     {spotifyData?.artist?.length > 25
-                                        ? `${spotifyData?.artist.slice(
-                                              0,
-                                              25
-                                          )}...`
+                                        ? `${spotifyData?.artist.slice(0, 25)}...`
                                         : spotifyData?.artist}
                                 </p>
                             </div>

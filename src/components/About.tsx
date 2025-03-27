@@ -1,5 +1,6 @@
 import FingerprintIcon from "@mui/icons-material/Fingerprint";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import Image from "next/image";
 
 const About = () => {
     return (
@@ -68,7 +69,7 @@ const About = () => {
             <div className="flex flex-col sm:flex-row md:flex-col mdd:flex-col 2xl:flex-row items-start 2xl:items-center gap-6 px-6">
                 <div className="flex items-center justify-center aspect-square h-32 z-10 [perspective:800px]">
                     <div className="relative flex items-center justify-center aspect-square h-32 z-10 hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))]">
-                        <img
+                        <Image
                             alt="Avatar"
                             loading="lazy"
                             width="128"
@@ -77,10 +78,9 @@ const About = () => {
                             data-nimg="1"
                             className="rounded-2xl h-32 w-32 border-[1px] border-gray-100 z-10"
                             style={{ color: "transparent" }}
-                            srcSet="pfp.jpeg"
-                            src="pfp.jpeg"
+                            src="/pfp.jpeg"
                         />
-                        <img
+                        <Image
                             alt="Avatar"
                             loading="lazy"
                             width="128"
@@ -89,8 +89,7 @@ const About = () => {
                             data-nimg="1"
                             className="rounded-2xl h-32 w-32 absolute blur-lg opacity-70 saturate-[6] translate-y-2 -z-10"
                             style={{ color: "transparent" }}
-                            srcSet="pfp.jpeg"
-                            src="pfp.jpeg"
+                            src="/pfp.jpeg"
                         />
                     </div>
                 </div>
@@ -98,7 +97,7 @@ const About = () => {
                     <div className="w-full flex flex-wrap sm:flex-col lg:flex-wrap gap-1 items-start justify-between">
                         <div className="w-max">
                             <p className="text-gray-700 text-xl animate-typing overflow-hidden whitespace-nowrap pr-1 border-r-4 border-brand-500">
-                                Arigatō! I'm{" "}
+                                Arigatō! I&apos;m{" "}
                                 <span className="font-bold text-[#5b155c] leading-tight">
                                     Karan
                                 </span>{" "}
