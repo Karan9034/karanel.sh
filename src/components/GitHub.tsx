@@ -50,7 +50,7 @@ const GitHub = ({ handleMouseLeave, handleMouseMove }: GitHubProps) => {
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-md w-full h-full"
-                    href="https://github.com/Karan9034"
+                    href="/github"
                 >
                     <div className="w-full h-full p-6 border-[1px] flex flex-col gap-6 border-gray-100 rounded-md">
                         <div className="card-header flex gap-2 items-center leading-tight">

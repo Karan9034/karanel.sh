@@ -19,14 +19,14 @@ const About = () => {
                         <a
                             target="_blank"
                             rel="noreferrer"
-                            href="https://twitter.com/_karanel"
+                            href="/twitter"
                         >
                             <TwitterIcon className="w-4 h-4 text-gray-400 hover:text-gray-600 transition-all fill-current" />
                         </a>
                         <a
                             target="_blank"
                             rel="noreferrer"
-                            href="https://discordapp.com/users/716322492586655795"
+                            href="/discord"
                         >
                             <svg
                                 className="text-gray-400 hover:text-gray-600 transition-all w-6"

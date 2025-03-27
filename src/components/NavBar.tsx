@@ -30,15 +30,24 @@ const NavBar = () => {
                         </Link>
                         <Link
                             className="text-lg font-medium text-gray-500 hover:text-gray-700"
-                            href="/blog"
+                            href="/linkedin"
+                            target="_blank"
                         >
-                            Blog
+                            LinkedIn
                         </Link>
                         <Link
                             className="text-lg font-medium text-gray-500 hover:text-gray-700"
-                            href="#"
+                            href="/resume"
+                            target="_blank"
                         >
-                            Photos
+                            Resume
+                        </Link>
+                        <Link
+                            className="text-lg font-medium text-gray-500 hover:text-gray-700"
+                            href="/github"
+                            target="_blank"
+                        >
+                            GitHub
                         </Link>
                     </div>
                     <div className="block md:hidden">

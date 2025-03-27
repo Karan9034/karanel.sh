@@ -8,7 +8,7 @@ const ReachOut = () => {
                             target="_blank"
                             rel="noreferrer"
                             className="flex items-center w-full gap-2"
-                            href="https://twitter.com/_karanel"
+                            href="/twitter"
                         >
                             <div>
                                 <div className="flex items-center justify-center bg-gradient-to-b from-blue-400 to to-blue-600 border-blue-500 border-[1px] p-2 w-fit rounded-lg">
@@ -46,7 +46,7 @@ const ReachOut = () => {
                             target="_blank"
                             rel="noreferrer"
                             className="flex items-center w-full gap-2"
-                            href="https://discordapp.com/users/716322492586655795"
+                            href="/discord"
                         >
                             <div>
                                 <div className="flex items-center justify-center bg-gradient-to-b from-indigo-400 to to-indigo-600 border-indigo-500 border-[1px] p-2 w-fit rounded-lg">

@@ -1,7 +1,5 @@
 import GitHub from "./GitHub";
-import Map from "./Map";
 import Discord from "./Discord";
-import Instagram from "./Instagram";
 import ReachOut from "./ReachOut";
 import Spotify from "./Spotify";
 import Weather from "./Weather";
@@ -10,6 +8,7 @@ import useSWR from "swr";
 import { useMemo } from "react";
 import { MotionValue } from "framer-motion";
 import { ROTATION_RANGE } from "@/data/const";
+import Audit from "./Audit";
 
 const Main = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -103,14 +102,14 @@ const Main = () => {
                     handleMouseLeave={handleMouseLeave}
                 />
             </div>
-            <Map
+            {/* <Map
                 handleMouseMove={handleMouseMove}
                 handleMouseLeave={handleMouseLeave}
-            />
-            <Instagram
+            /> */}
+            {/* <Instagram
                 handleMouseMove={handleMouseMove}
                 handleMouseLeave={handleMouseLeave}
-            />
+            /> */}
             <Spotify
                 spotifyData={spotifyData}
                 handleMouseMove={handleMouseMove}
@@ -120,10 +119,15 @@ const Main = () => {
                 handleMouseMove={handleMouseMove}
                 handleMouseLeave={handleMouseLeave}
             />
+            {/* 
+                Two Potential Components
+                1. 
+            */}
             <GitHub
                 handleMouseMove={handleMouseMove}
                 handleMouseLeave={handleMouseLeave}
             />
+            <Audit />
             <ReachOut />
         </div>
     );

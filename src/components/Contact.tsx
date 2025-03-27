@@ -26,7 +26,7 @@ const Contact = () => {
                         target="_blank"
                         rel="noreferrer"
                         className="font-bold text-blue-500 hover:text-blue-600 transition-colors"
-                        href="https://twitter.com/_karanel"
+                        href="/twitter"
                     >
                         Twitter
                     </a>
@@ -37,7 +37,7 @@ const Contact = () => {
                         target="_blank"
                         rel="noreferrer"
                         className="font-bold text-indigo-500 hover:text-indigo-600 transition-colors"
-                        href="https://discordapp.com/users/716322492586655795"
+                        href="/discord"
                     >
                         {" "}
                         Discord

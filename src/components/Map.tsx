@@ -46,7 +46,7 @@ const Map = ({ handleMouseMove, handleMouseLeave }: MapProps) => {
                 }}
                 className="card-hover h-72 md:h-full w-full rounded-xl shadow-md shadow-indigo-900/5 map-border md:overflow-hidden flex items-end justify-end"
             >
-                <div className="relative h-full w-full border-gray-100 border-[1px] rounded-sm bg-gray-50 overflow-hidden">
+                <div className="h-full w-full border-gray-100 border-[1px] rounded-sm bg-gray-50 overflow-hidden">
                     <div className="absolute bottom-0 right-0 m-2 font-medium flex items-end gap-2 z-50 text-base 2xl:text-lg text-gray-600 px-4 bg-white/20 backdrop-blur-md backdrop-saturate-200 shadow-md shadow-indigo-900/10 py-1 rounded-full border-white border-[1px]">
                         <svg
                             className="w-4 text-brand-600"

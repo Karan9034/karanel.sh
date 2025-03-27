@@ -46,10 +46,10 @@ const Instagram = ({ handleMouseLeave, handleMouseMove }: InstagramProps) => {
                     transform: `translateZ(10px)`,
                 }}
                 href="https://www.instagram.com/_karan.garg/"
-                className="card-hover relative flex w-full h-96 lg:h-full justify-center items-center"
+                className="card-hover flex w-full h-96 lg:h-full justify-center items-center"
             >
-                <div className="w-full h-full absolute inset-0 flex flex-col bg-white border-[1px] border-gray-100 rounded-lg shadow-md shadow-indigo-900/5">
-                    <div className="w-full h-66 3xl:h-80 rounded-md p-3">
+                <div className="w-full h-full inset-0 flex flex-col bg-white border-[1px] border-gray-100 rounded-lg shadow-md shadow-indigo-900/5">
+                    <div className="w-full h-54 3xl:h-80 rounded-md p-3">
                         <Image
                             alt="Polaroid Top"
                             loading="lazy"
@@ -62,10 +62,9 @@ const Instagram = ({ handleMouseLeave, handleMouseMove }: InstagramProps) => {
                             src="/pic-1.jpg"
                         />
                     </div>
-                    <p className="card-header flex items-center gap-1 leading-tight px-3">
+                    <p className="card-header flex items-center gap-1 leading-tight px-5 py-3 text-lg">
                         <FaInstagram className="w-4" />
-                        Instagram
-                        <span className="text-gray-500 text-sm">
+                        <span className=" text-sm">
                             @_karan.garg
                         </span>
                     </p>
