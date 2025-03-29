@@ -11,11 +11,11 @@ export const config = {
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === "POST") {
-        if (!existsSync("./uploads/")) {
-            mkdirSync("./uploads/");
+        if (!existsSync("/tmp/uploads/")) {
+            mkdirSync("/tmp/uploads/");
         }
         const form = new IncomingForm({
-            uploadDir: "./uploads/",
+            uploadDir: "/tmp/uploads/",
             keepExtensions: true,
         });
         form.parse(req, async (err, fields, files) => {
