@@ -42,23 +42,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                     {},
                     {},
                 );
-
-                console.log(uploadedObject);
-                const resp = await fetch(
-                    `https://cleanuri.com/api/v1/shorten`,
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({
-                            url: `https://${process.env.GATEWAY_NAME as string}.myfilebase.com/ipfs/${uploadedObject.cid}`,
-                        }),
-                    },
-                );
-                const data = await resp.json();
-                console.log(data);
-                return res.status(200).json(data);
+                return res.status(200).json({ cid: uploadedObject.cid });
             }
         });
     } else {

@@ -52,7 +52,7 @@ const RandomFact = ({ handleMouseLeave, handleMouseMove }: RandomFactProps) => {
                     transformStyle: "preserve-3d",
                     transform: `translateZ(10px)`,
                 }}
-                className="card-hover h-full w-full rounded-xl shadow-inner shadow-indigo-700/5 map-border"
+                className="card-hover h-full w-full rounded-xl bg-gray-50 shadow-md shadow-indigo-700/5 map-border"
             >
                 <div className="h-full flex flex-col justify-between w-full bg-gray-50 border-[1px] border-gray-100 p-[18px] rounded-md">
                     <div className="h-full w-full">

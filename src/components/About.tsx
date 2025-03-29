@@ -63,7 +63,8 @@ const About = () => {
                     <div className="relative flex items-center justify-center aspect-square h-32 z-10 hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))]">
                         <Image
                             alt="Avatar"
-                            loading="lazy"
+                            priority
+                            fetchPriority="high"
                             width="128"
                             height="128"
                             decoding="async"
@@ -74,7 +75,8 @@ const About = () => {
                         />
                         <Image
                             alt="Avatar"
-                            loading="lazy"
+                            priority
+                            fetchPriority="high"
                             width="128"
                             height="128"
                             decoding="async"

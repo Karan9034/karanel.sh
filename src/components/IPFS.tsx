@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { SiIpfs } from "react-icons/si";
 import { FaCircleQuestion } from "react-icons/fa6";
+import Link from "next/link";
 
 interface IPFSProps {
     handleMouseMove: (
@@ -28,6 +29,7 @@ const IPFS = ({ handleMouseLeave, handleMouseMove }: IPFSProps) => {
     const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
 
     const [file, setFile] = useState<File | null>(null);
+    const [url, setUrl] = useState<string | null>(null);
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
@@ -50,6 +52,11 @@ const IPFS = ({ handleMouseLeave, handleMouseMove }: IPFSProps) => {
 
         const data = await response.json();
         console.log(data);
+        if (data.cid) {
+            setUrl(
+                `https://${process.env.NEXT_PUBLIC_GATEWAY_NAME}.myfilebase.com/ipfs/${data.cid}`,
+            );
+        }
     };
 
     return (
@@ -70,13 +77,13 @@ const IPFS = ({ handleMouseLeave, handleMouseMove }: IPFSProps) => {
                     transformStyle: "preserve-3d",
                     transform: `translateZ(10px)`,
                 }}
-                className="card-hover h-full w-full rounded-xl shadow-inner shadow-indigo-700/5 map-border"
+                className="card-hover h-full w-full rounded-xl bg-gray-50 shadow-md shadow-indigo-700/5 map-border"
             >
                 <div className="h-full flex flex-col justify-between w-full bg-gray-50 border-[1px] border-gray-100 p-[18px] rounded-md">
                     <div className="h-full w-full">
                         <h1 className="card-header flex gap-2 items-center">
                             <SiIpfs size={30} />
-                            UPLOAD FILE TO IPFS
+                            IPFS Upload
                             <div className="tooltip">
                                 <FaCircleQuestion size={15} />
                                 <div className="tooltiptext">
@@ -89,17 +96,36 @@ const IPFS = ({ handleMouseLeave, handleMouseMove }: IPFSProps) => {
                         </h1>
                     </div>
                     <div className="flex flex-col h-full w-full">
-                        <input type="file" onChange={handleFileChange} />
+                        <input
+                            type="file"
+                            onChange={handleFileChange}
+                            className="file:mr-4 file:rounded-full file:border-0 file:outline-0 file:bg-violet-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-violet-100 dark:file:bg-violet-600 dark:file:text-violet-100 dark:hover:file:bg-violet-500"
+                        />
                         <br />
                         <button
                             disabled={!file}
-                            className={`btn btn-primary ${
-                                !file ? "btn-disabled" : ""
+                            className={`${
+                                !file
+                                    ? "bg-violet-100 cursor-default hover:bg-violet-100 text-black font-bold py-2 px-4 border border-grey-500 rounded"
+                                    : "bg-violet-700 cursor-pointer hover:bg-violet-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
                             }`}
                             onClick={handleUpload}
                         >
                             Upload!
                         </button>
+                        {url && (
+                            <h3 className="text-sm py-3">
+                                Your file is uploaded{" "}
+                                <Link
+                                    target="_blank"
+                                    className="text-blue-700 underline"
+                                    href={url}
+                                >
+                                    here
+                                </Link>
+                                !
+                            </h3>
+                        )}
                     </div>
                 </div>
             </div>

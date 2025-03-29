@@ -50,7 +50,7 @@ const Spotify = ({
                     transformStyle: "preserve-3d",
                     transform: `translateZ(10px)`,
                 }}
-                className="card-hover h-full w-full rounded-xl shadow-inner shadow-indigo-700/5 map-border"
+                className="card-hover h-full w-full rounded-xl bg-gray-50 shadow-md shadow-indigo-700/5 map-border"
             >
                 <a
                     target="_blank"
@@ -74,35 +74,30 @@ const Spotify = ({
                                         stroke="currentColor"
                                         strokeWidth="2"
                                         strokeLinecap="round"
-                                        transform-origin="8px 12px"
                                     ></path>
                                     <path
                                         d="M4 10V14"
                                         stroke="currentColor"
                                         strokeWidth="2"
                                         strokeLinecap="round"
-                                        transform-origin="4px 12px"
                                     ></path>
                                     <path
                                         d="M12 8V16"
                                         stroke="currentColor"
                                         strokeWidth="2"
                                         strokeLinecap="round"
-                                        transform-origin="12px 12px"
                                     ></path>
                                     <path
                                         d="M16 6V18"
                                         stroke="currentColor"
                                         strokeWidth="2"
                                         strokeLinecap="round"
-                                        transform-origin="16px 12px"
                                     ></path>
                                     <path
                                         d="M20 10V14"
                                         stroke="currentColor"
                                         strokeWidth="2"
                                         strokeLinecap="round"
-                                        transform-origin="20px 12px"
                                     ></path>
                                 </g>
                             </svg>
@@ -115,6 +110,7 @@ const Spotify = ({
                                 aria-placeholder="empty"
                                 alt=""
                                 fetchPriority="high"
+                                priority
                                 width="128"
                                 height="128"
                                 decoding="async"
@@ -124,13 +120,14 @@ const Spotify = ({
                                 src={
                                     spotifyData
                                         ? spotifyData.album_art_url
-                                        : "/#"
+                                        : "/"
                                 }
                             />
                             <Image
                                 aria-placeholder="empty"
                                 alt=""
-                                loading="lazy"
+                                priority
+                                fetchPriority="high"
                                 width="128"
                                 height="128"
                                 decoding="async"
@@ -140,7 +137,7 @@ const Spotify = ({
                                 src={
                                     spotifyData
                                         ? spotifyData.album_art_url
-                                        : "/#"
+                                        : "/"
                                 }
                             />
                             <div className="absolute z-10 h-full w-full rounded-lg skeleton top-0 right-0"></div>
