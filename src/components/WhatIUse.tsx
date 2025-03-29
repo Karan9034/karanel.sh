@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { LuLaptop } from "react-icons/lu";
 import { IoPhonePortraitOutline } from "react-icons/io5";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { IoMdTabletLandscape } from "react-icons/io";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 import { FiCpu } from "react-icons/fi";
@@ -90,13 +91,13 @@ const WhatIUse = ({ handleMouseMove, handleMouseLeave }: WhatIUseProps) => {
                                     />
                                     realme 8s 5G
                                 </p>
-                                <p className="flex gap-2 items-center leading-tight">
+                                {/* <p className="flex gap-2 items-center leading-tight">
                                     <IoMdTabletLandscape
                                         size={20}
                                         className="text-gray-600"
                                     />
                                     iPad Air 5th Gen
-                                </p>
+                                </p> */}
                                 <p className="flex gap-2 items-center leading-tight">
                                     <FiCpu
                                         className="text-gray-600"

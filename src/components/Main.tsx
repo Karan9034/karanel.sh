@@ -9,6 +9,8 @@ import { useMemo } from "react";
 import { MotionValue } from "framer-motion";
 import { ROTATION_RANGE } from "@/data/const";
 import Audit from "./Audit";
+import RandomFact from "./RandomFact";
+import IPFS from "./IPFS";
 
 const Main = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -44,7 +46,7 @@ const Main = () => {
         if (isLoading) return [null];
         if (
             data?.data?.spotify &&
-            data?.data?.spotify != data?.data?.kv?.spotifyData
+            data?.data?.spotify != JSON.parse(data?.data?.kv?.spotifyData)
         ) {
             storeSpotifyData(data?.data?.spotify);
         }
@@ -119,10 +121,14 @@ const Main = () => {
                 handleMouseMove={handleMouseMove}
                 handleMouseLeave={handleMouseLeave}
             />
-            {/* 
-                Two Potential Components
-                1. 
-            */}
+            <RandomFact
+                handleMouseMove={handleMouseMove}
+                handleMouseLeave={handleMouseLeave}
+            />
+            <IPFS
+                handleMouseMove={handleMouseMove}
+                handleMouseLeave={handleMouseLeave}
+            />
             <GitHub
                 handleMouseMove={handleMouseMove}
                 handleMouseLeave={handleMouseLeave}

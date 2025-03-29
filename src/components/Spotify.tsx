@@ -137,7 +137,11 @@ const Spotify = ({
                                 data-nimg="1"
                                 className="-z-10 h-full w-full rounded-lg absolute blur-xl saturate-[10] translate-y-2 opacity-75 sm:opacity-50 overflow-visible"
                                 style={{ color: "transparent" }}
-                                src={spotifyData?.album_art_url}
+                                src={
+                                    spotifyData
+                                        ? spotifyData.album_art_url
+                                        : "/#"
+                                }
                             />
                             <div className="absolute z-10 h-full w-full rounded-lg skeleton top-0 right-0"></div>
                         </div>
