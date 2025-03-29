@@ -23,7 +23,8 @@ const nextConfig: NextConfig = {
             },
             {
                 source: "/resume",
-                destination: "https://1drv.ms/b/c/b4d0294a179b4114/ETz8Gsb1EwJGjzcapfvA7PwB8Mhig_Allu4JZtiKITDTzQ?e=gvMdAa",
+                destination:
+                    "https://1drv.ms/b/c/b4d0294a179b4114/ETz8Gsb1EwJGjzcapfvA7PwB8Mhig_Allu4JZtiKITDTzQ?e=gvMdAa",
                 permanent: false,
             },
             {
@@ -50,9 +51,9 @@ const nextConfig: NextConfig = {
                 source: "/discord",
                 destination: "https://discordapp.com/users/716322492586655795",
                 permanent: true,
-            }
+            },
         ];
-    }
+    },
 };
 
 export default nextConfig;

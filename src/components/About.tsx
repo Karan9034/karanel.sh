@@ -16,18 +16,10 @@ const About = () => {
                 </div>
                 <div className="">
                     <div className="flex gap-3 items-center">
-                        <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href="/twitter"
-                        >
+                        <a target="_blank" rel="noreferrer" href="/twitter">
                             <TwitterIcon className="w-4 h-4 text-gray-400 hover:text-gray-600 transition-all fill-current" />
                         </a>
-                        <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href="/discord"
-                        >
+                        <a target="_blank" rel="noreferrer" href="/discord">
                             <svg
                                 className="text-gray-400 hover:text-gray-600 transition-all w-6"
                                 xmlns="http://www.w3.org/2000/svg"

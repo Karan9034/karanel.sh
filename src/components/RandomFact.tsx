@@ -57,8 +57,8 @@ const RandomFact = ({ handleMouseLeave, handleMouseMove }: RandomFactProps) => {
                 <div className="h-full flex flex-col justify-between w-full bg-gray-50 border-[1px] border-gray-100 p-[18px] rounded-md">
                     <div className="h-full w-full">
                         <h1 className="card-header flex gap-2 items-center">
-                            <MdOutlineFactCheck size={30}/>
-                            A FACT NOBODY ASKED FOR
+                            <MdOutlineFactCheck size={30} />A FACT NOBODY ASKED
+                            FOR
                         </h1>
                     </div>
                     <div className="flex flex-col h-full w-full">

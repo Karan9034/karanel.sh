@@ -89,7 +89,7 @@ const IPFS = ({ handleMouseLeave, handleMouseMove }: IPFSProps) => {
                         </h1>
                     </div>
                     <div className="flex flex-col h-full w-full">
-                        <input type="file" onChange={handleFileChange}/>
+                        <input type="file" onChange={handleFileChange} />
                         <br />
                         <button
                             disabled={!file}

@@ -64,9 +64,7 @@ const Instagram = ({ handleMouseLeave, handleMouseMove }: InstagramProps) => {
                     </div>
                     <p className="card-header flex items-center gap-1 leading-tight px-5 py-3 text-lg">
                         <FaInstagram className="w-4" />
-                        <span className=" text-sm">
-                            @_karan.garg
-                        </span>
+                        <span className=" text-sm">@_karan.garg</span>
                     </p>
                 </div>
             </a>

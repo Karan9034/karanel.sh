@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { ObjectManager } from "@filebase/sdk";
 import { IncomingForm } from "formidable";
-import { readFileSync } from "fs";
+import { mkdirSync, readFileSync, existsSync } from "fs";
 
 export const config = {
     api: {
@@ -11,6 +11,9 @@ export const config = {
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === "POST") {
+        if (!existsSync("./uploads/")) {
+            mkdirSync("./uploads/");
+        }
         const form = new IncomingForm({
             uploadDir: "./uploads/",
             keepExtensions: true,
@@ -39,19 +42,22 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                     {},
                     {},
                 );
-                
+
                 console.log(uploadedObject);
-                const resp = await fetch(`https://cleanuri.com/api/v1/shorten`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
+                const resp = await fetch(
+                    `https://cleanuri.com/api/v1/shorten`,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            url: `https://${process.env.GATEWAY_NAME as string}.myfilebase.com/ipfs/${uploadedObject.cid}`,
+                        }),
                     },
-                    body: JSON.stringify({
-                        url: `https://${process.env.GATEWAY_NAME as string}.myfilebase.com/ipfs/${uploadedObject.cid}`
-                    })
-                })
+                );
                 const data = await resp.json();
-                console.log(data)
+                console.log(data);
                 return res.status(200).json(data);
             }
         });

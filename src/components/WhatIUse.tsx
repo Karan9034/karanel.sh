@@ -12,12 +12,7 @@ import { IoPhonePortraitOutline } from "react-icons/io5";
 import { IoMdTabletLandscape } from "react-icons/io";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 import { FiCpu } from "react-icons/fi";
-import {
-    FaReact,
-    FaMicrophone,
-    FaNodeJs,
-    FaPython,
-} from "react-icons/fa";
+import { FaReact, FaMicrophone, FaNodeJs, FaPython } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import { RiNextjsLine } from "react-icons/ri";
 import { DiGit } from "react-icons/di";
