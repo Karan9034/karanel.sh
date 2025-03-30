@@ -27,7 +27,8 @@ const FunFacts = () => {
                         </p>
                         <ul className="list-disc  list-inside text-gray-600">
                             <li>Big time One Piece fan 🏴‍☠</li>
-                            <li>Manga/Manhwa reader 📖</li>
+                            <li>Your average Ted Mosby ☂️ </li>
+                            <li>Full time Manga/Manhwa reader 📖</li>
                             <li>Lewis Hamilton fan 🏎️💨</li>
                             <li>Simp for Suki Waterhouse 🎶</li>
                         </ul>
