@@ -70,7 +70,7 @@ const IPFS = ({ handleMouseLeave, handleMouseMove }: IPFSProps) => {
                 transformStyle: "preserve-3d",
                 transform,
             }}
-            className="h-full w-full [perspective:800px] sm:col-span-1 col-span-2"
+            className="z-10 h-full w-full [perspective:800px] sm:col-span-1 col-span-2"
         >
             <div
                 style={{
@@ -88,9 +88,9 @@ const IPFS = ({ handleMouseLeave, handleMouseMove }: IPFSProps) => {
                                 <FaCircleQuestion size={15} />
                                 <div className="tooltiptext">
                                     You can upload files to IPFS and get a
-                                    shortened permalink to your file. None of
-                                    the files get stored on servers managed by
-                                    me. Don&apos;t upload sensitive content.
+                                    permalink to your file. None of the files
+                                    get stored on servers managed by me.
+                                    Don&apos;t upload sensitive content.
                                 </div>
                             </div>
                         </h1>
