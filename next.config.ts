@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
             {
                 source: "/resume",
                 destination:
-                    "https://1drv.ms/b/c/b4d0294a179b4114/ETz8Gsb1EwJGjzcapfvA7PwB8Mhig_Allu4JZtiKITDTzQ?e=gvMdAa",
+                    "https://drive.google.com/file/d/1KHiI5fXVjZMY0gQ0P3117QiTURdIS5QG/view?usp=drive_link",
                 permanent: false,
             },
             {
