@@ -44,7 +44,7 @@ const GitHub = ({ handleMouseLeave, handleMouseMove }: GitHubProps) => {
                     transformStyle: "preserve-3d",
                     transform: `translateZ(10px)`,
                 }}
-                className="card-hover h-full bg-[#E6E6FA] map-border shadow-md shadow-brand-900/5"
+                className="card-hover h-full bg-gray-50 map-border shadow-md shadow-brand-900/5"
             >
                 <a
                     target="_blank"
@@ -78,11 +78,11 @@ const GitHub = ({ handleMouseLeave, handleMouseMove }: GitHubProps) => {
                                 </p>
                             </div>
                         </div>
-                        <div className="w-full h-60 flex items-center justify-center">
+                        <div className="w-full h-46 flex items-center justify-center">
                             <GitHubCalendar
                                 username="Karan9034"
                                 blockRadius={6}
-                                blockSize={16}
+                                blockSize={14}
                                 fontSize={18}
                                 hideTotalCount
                                 colorScheme="light"

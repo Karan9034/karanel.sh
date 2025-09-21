@@ -55,7 +55,7 @@ const Spotify = ({
                 <a
                     target="_blank"
                     rel="noreferrer"
-                    className="h-full flex flex-col justify-between w-full bg-[#E6E6FA] border-[1px] border-gray-100 p-[18px] rounded-md"
+                    className="h-full flex flex-col justify-between w-full bg-gray-50 border-[1px] border-gray-100 p-[18px] rounded-md"
                     href={`https://open.spotify.com/track/${spotifyData?.track_id}`}
                 >
                     <div className="h-full w-full">

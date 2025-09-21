@@ -91,7 +91,13 @@ const Main = () => {
     };
 
     return (
-        <div className="w-full h-full flex flex-col col-span-6 gap-6 md:col-span-5 lg:col-span-6 sm:grid md:gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 grid-flow-row p-3 shadow-inner shadow-brand-900/5">
+        <div
+            className="w-full h-full flex flex-col col-span-6 gap-6 md:col-span-5 lg:col-span-6 sm:grid md:gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 grid-flow-row p-3 shadow-inner shadow-brand-900/5"
+            style={{
+                alignContent: "center",
+                justifyContent: "center",
+            }}
+        >
             {/* <Work
                 handleMouseLeave={handleMouseLeave}
                 handleMouseMove={handleMouseMove}

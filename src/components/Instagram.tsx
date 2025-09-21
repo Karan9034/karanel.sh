@@ -47,7 +47,7 @@ const Instagram = ({ handleMouseLeave, handleMouseMove }: InstagramProps) => {
                 href="https://www.instagram.com/_karan.garg/"
                 className="card-hover flex w-full lg:h-full justify-center items-center"
             >
-                <div className="w-full h-full inset-0 flex flex-col bg-[#E6E6FA] border-[1px] border-gray-100 rounded-lg shadow-md shadow-indigo-900/5">
+                <div className="w-full h-full inset-0 flex flex-col bg-gray-50 border-[1px] border-gray-100 rounded-lg shadow-md shadow-indigo-900/5">
                     <div className="w-full h-54 3xl:h-80 rounded-md p-3">
                         <Image
                             alt="Karan's Instagram"

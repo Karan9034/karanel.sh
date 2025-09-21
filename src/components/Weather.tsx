@@ -48,7 +48,7 @@ const Weather = ({ handleMouseMove, handleMouseLeave }: WeatherProps) => {
                     transformStyle: "preserve-3d",
                     transform: `translateZ(10px)`,
                 }}
-                className="card-hover w-full h-full rounded-md bg-[#E6E6FA] map-border shadow-md shadow-brand-900/5"
+                className="card-hover w-full h-full rounded-md bg-gray-50 map-border shadow-md shadow-brand-900/5"
             >
                 <div className="w-full h-full p-6 border-[1px] border-gray-100 rounded-md">
                     <p className="card-header flex items-center gap-2">
@@ -68,7 +68,7 @@ const Weather = ({ handleMouseMove, handleMouseLeave }: WeatherProps) => {
                                 strokeLinejoin="round"
                             ></path>
                         </svg>
-                        WEATHER
+                        WEATHER - BLR
                     </p>
                     <p className="text-3xl 3xl:text-4xl font-medium text-gray-600">
                         {isLoading ? "Loading..." : data?.current?.temp_c + "°"}

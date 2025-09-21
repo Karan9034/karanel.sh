@@ -4,7 +4,7 @@ import FunFacts from "./FunFacts";
 
 const SideBar = () => {
     return (
-        <div className="w-full h-full flex flex-col col-span-2 md:col-span-3 lg:col-span-2 gap-6 bg-[#E6E6FA] border-r-[1px] border-gray-200 shadow-sm shadow-brand-900/5 z-30 overflow-visible">
+        <div className="w-full h-full flex flex-col col-span-2 md:col-span-3 lg:col-span-2 gap-6 bg-gray-50 border-r-[1px] border-gray-200 shadow-sm shadow-brand-900/5 z-30 overflow-visible">
             <About />
             <FunFacts />
             <Contact />

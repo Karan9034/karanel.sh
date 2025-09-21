@@ -99,7 +99,7 @@ const About = () => {
                         </div>
                         <p className="text-gray-600 text-base">
                             A software developer and smart contract security
-                            researcher from India.
+                            researcher based out of Bengaluru, India.
                         </p>
                     </div>
                 </div>
