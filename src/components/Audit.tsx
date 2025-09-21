@@ -3,7 +3,7 @@ const Audit = () => {
         <div className="col-span-1 row-span-1 flex flex-col w-full gap-1 h-full">
             <div className="h-full w-full [perspective:800px] col-span-1">
                 <div className="w-full h-full map-border">
-                    <div className="w-full h-full flex flex-col gap-4 items-center p-4 border-[1px] border-gray-100 rounded-md bg-gray-50">
+                    <div className="w-full h-full flex flex-col gap-4 items-center p-4 border-[1px] border-gray-100 rounded-md bg-[#E6E6FA]">
                         <a
                             target="_blank"
                             rel="noreferrer"
@@ -57,7 +57,7 @@ const Audit = () => {
             </div>
             <div className="h-full w-full [perspective:800px] col-span-1">
                 <div className="w-full h-full map-border">
-                    <div className="w-full h-full flex flex-col gap-4 items-center p-4 border-[1px] border-gray-100 rounded-md bg-gray-50">
+                    <div className="w-full h-full flex flex-col gap-4 items-center p-4 border-[1px] border-gray-100 rounded-md bg-[#E6E6FA]">
                         <a
                             target="_blank"
                             rel="noreferrer"
@@ -101,7 +101,7 @@ const Audit = () => {
             </div>
             <div className="h-full w-full [perspective:800px] col-span-1">
                 <div className="w-full h-full map-border">
-                    <div className="w-full h-full flex flex-col gap-4 items-center p-4 border-[1px] border-gray-100 rounded-md bg-gray-50">
+                    <div className="w-full h-full flex flex-col gap-4 items-center p-4 border-[1px] border-gray-100 rounded-md bg-[#E6E6FA]">
                         <a
                             target="_blank"
                             rel="noreferrer"

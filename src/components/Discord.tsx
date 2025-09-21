@@ -50,9 +50,9 @@ const Discord = ({
                     transformStyle: "preserve-3d",
                     transform: `translateZ(10px)`,
                 }}
-                className="card-hover w-full h-full bg-gray-50 map-border shadow-md shadow-indigo-900/5"
+                className="card-hover w-full h-full map-border shadow-md shadow-indigo-900/5"
             >
-                <div className="w-full h-full flex p-6 border-[1px] border-gray-100 rounded-md flex-col">
+                <div className="w-full h-full flex p-6 border-[1px] border-gray-100 bg-[#E6E6FA] rounded-md flex-col">
                     <h2 className="card-header flex items-center gap-2">
                         <svg
                             className="w-4 h-4"

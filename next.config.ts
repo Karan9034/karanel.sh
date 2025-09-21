@@ -52,6 +52,11 @@ const nextConfig: NextConfig = {
                 destination: "https://discordapp.com/users/716322492586655795",
                 permanent: true,
             },
+            {
+                source: "/leetcode",
+                destination: "https://leetcode.com/u/karanel",
+                permanent: true,
+            },
         ];
     },
 };

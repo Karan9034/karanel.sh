@@ -34,7 +34,7 @@ const About = () => {
                                 ></path>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noreferrer" href="#">
+                        <a target="_blank" rel="noreferrer" href="/resume">
                             <svg
                                 className="text-gray-400 hover:text-gray-600 transition-all w-5"
                                 xmlns="http://www.w3.org/2000/svg"

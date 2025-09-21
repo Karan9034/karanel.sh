@@ -61,7 +61,7 @@ const WhatIUse = ({ handleMouseMove, handleMouseLeave }: WhatIUseProps) => {
                     transformStyle: "preserve-3d",
                     transform: `translateZ(10px)`,
                 }}
-                className="card-hover w-full h-full map-border rounded-md bg-gray-50 shadow-md shadow-indigo-900/5"
+                className="card-hover w-full h-full map-border rounded-md bg-[#E6E6FA] shadow-md shadow-indigo-900/5"
             >
                 <div className="w-full h-full p-6 border-[1px] border-gray-100 rounded-md">
                     <div className="flex gap-2 items-center card-header leading-tight">
@@ -86,13 +86,13 @@ const WhatIUse = ({ handleMouseMove, handleMouseLeave }: WhatIUseProps) => {
                                     />
                                     realme 8s 5G
                                 </p>
-                                {/* <p className="flex gap-2 items-center leading-tight">
+                                <p className="flex gap-2 items-center leading-tight">
                                     <IoMdTabletLandscape
                                         size={20}
                                         className="text-gray-600"
                                     />
-                                    iPad Air 5th Gen
-                                </p> */}
+                                    iPad 11" A16
+                                </p>
                                 <p className="flex gap-2 items-center leading-tight">
                                     <FiCpu
                                         className="text-gray-600"

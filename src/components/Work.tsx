@@ -9,7 +9,7 @@ import {
 import { FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 
-interface InstagramProps {
+interface WorkProps {
     handleMouseMove: (
         e: React.MouseEvent<HTMLDivElement, MouseEvent>,
         ref: DOMRect | null,
@@ -19,7 +19,7 @@ interface InstagramProps {
     handleMouseLeave: (x: MotionValue<number>, y: MotionValue<number>) => void;
 }
 
-const Instagram = ({ handleMouseLeave, handleMouseMove }: InstagramProps) => {
+const Work = ({ handleMouseLeave, handleMouseMove }: WorkProps) => {
     const [rect, setRect] = useState<DOMRect | null>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -154,4 +154,4 @@ const Instagram = ({ handleMouseLeave, handleMouseMove }: InstagramProps) => {
     );
 };
 
-export default Instagram;
+export default Work;

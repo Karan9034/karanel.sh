@@ -9,8 +9,9 @@ import { useMemo } from "react";
 import { MotionValue } from "framer-motion";
 import { ROTATION_RANGE } from "@/data/const";
 import Audit from "./Audit";
+import Instagram from "./Instagram";
+import Work from "./Work";
 import RandomFact from "./RandomFact";
-import IPFS from "./IPFS";
 
 const Main = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -92,6 +93,15 @@ const Main = () => {
 
     return (
         <div className="w-full h-full flex flex-col col-span-6 gap-6 md:col-span-5 lg:col-span-6 sm:grid md:gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 grid-flow-row p-3 shadow-inner shadow-brand-900/5">
+            {/* <Work
+                handleMouseLeave={handleMouseLeave}
+                handleMouseMove={handleMouseMove}
+            /> */}
+            <Spotify
+                spotifyData={spotifyData}
+                handleMouseMove={handleMouseMove}
+                handleMouseLeave={handleMouseLeave}
+            />
             <div className="h-full col-span-2 sm:col-span-1 row-span-1 flex sm:flex-col flex-row gap-3">
                 <Discord
                     status={status}
@@ -104,16 +114,20 @@ const Main = () => {
                     handleMouseLeave={handleMouseLeave}
                 />
             </div>
-            {/* <Map
+            <RandomFact
+                handleMouseMove={handleMouseMove}
+                handleMouseLeave={handleMouseLeave}
+            />
+            <Instagram
+                handleMouseMove={handleMouseMove}
+                handleMouseLeave={handleMouseLeave}
+            />
+            <Audit />
+            {/* <IPFS
                 handleMouseMove={handleMouseMove}
                 handleMouseLeave={handleMouseLeave}
             /> */}
-            {/* <Instagram
-                handleMouseMove={handleMouseMove}
-                handleMouseLeave={handleMouseLeave}
-            /> */}
-            <Spotify
-                spotifyData={spotifyData}
+            <GitHub
                 handleMouseMove={handleMouseMove}
                 handleMouseLeave={handleMouseLeave}
             />
@@ -121,19 +135,6 @@ const Main = () => {
                 handleMouseMove={handleMouseMove}
                 handleMouseLeave={handleMouseLeave}
             />
-            <RandomFact
-                handleMouseMove={handleMouseMove}
-                handleMouseLeave={handleMouseLeave}
-            />
-            <IPFS
-                handleMouseMove={handleMouseMove}
-                handleMouseLeave={handleMouseLeave}
-            />
-            <GitHub
-                handleMouseMove={handleMouseMove}
-                handleMouseLeave={handleMouseLeave}
-            />
-            <Audit />
             <ReachOut />
         </div>
     );

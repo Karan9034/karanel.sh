@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <div className="sm:px-0 min-h-screen h-full">
             <div className="flex-1 flex flex-col overflow-hidden min-h-screen">
-                <NavBar />
+                {/* <NavBar /> */}
                 <div className="flex-1 lg:grid lg:grid-cols-8 grid-cols-3 flex flex-col">
                     <SideBar />
                     <Main />
