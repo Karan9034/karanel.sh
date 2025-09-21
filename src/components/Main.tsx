@@ -10,7 +10,6 @@ import { MotionValue } from "framer-motion";
 import { ROTATION_RANGE } from "@/data/const";
 import Audit from "./Audit";
 import Instagram from "./Instagram";
-import Work from "./Work";
 import RandomFact from "./RandomFact";
 
 const Main = () => {
