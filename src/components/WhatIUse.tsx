@@ -83,7 +83,7 @@ const WhatIUse = ({ handleMouseMove, handleMouseLeave }: WhatIUseProps) => {
                                         className="text-gray-600"
                                         size={20}
                                     />
-                                    realme 8s 5G
+                                    Samsung Galaxy S25+
                                 </p>
                                 <p className="flex gap-2 items-center leading-tight">
                                     <IoMdTabletLandscape

@@ -91,7 +91,7 @@ const About = () => {
                     <div className="w-full flex flex-wrap sm:flex-col lg:flex-wrap gap-1 items-start justify-between">
                         <div className="w-max">
                             <p className="text-gray-700 text-xl animate-typing overflow-hidden whitespace-nowrap pr-1 border-r-4 border-brand-500">
-                                Arigatō! I&apos;m{" "}
+                                Konnichiwa! I&apos;m{" "}
                                 <span className="font-bold text-[#5b155c] leading-tight">
                                     Karan
                                 </span>{" "}
