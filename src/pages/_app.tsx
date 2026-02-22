@@ -7,10 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <>
             <Head>
                 <meta charSet="utf-8" />
-                <meta
-                    name="viewport"
-                    content="width=1960, height=device-height, initial-scale=1.0"
-                />
+                <meta name="viewport" content="width=1960, initial-scale=1.0" />
                 <title>Karan Agrawal - (Pretty Good) Software Developer</title>
                 <link rel="icon" type="image/jpeg" href="/pfp-round.jpeg" />
                 <meta
